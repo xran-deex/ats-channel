@@ -12,4 +12,4 @@ ATS_COMPILE (TEST_SRC
 	src/SATS/channel.sats
 	src/DATS/channel.dats
 	)
-ADD_LIBRARY(ats-concurrency ${TEST_SRC})
+ADD_LIBRARY(ats-channel ${TEST_SRC})
