@@ -1,4 +1,6 @@
-#include "./../ats-channel.hats"
+#include "ats-channel.hats"
+
+staload $CHANNEL
 
 implement main(argc, argv) = 0 where {
     val ch = channel_make<int>(1)

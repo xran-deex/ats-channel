@@ -1,3 +1,4 @@
+#define ATS_PACKNAME "ats-channel"
 staload "libats/SATS/athread.sats"
 staload "libats/SATS/funarray.sats"
 staload "libats/SATS/deqarray.sats"
