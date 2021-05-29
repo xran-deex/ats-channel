@@ -1,11 +1,11 @@
 ATSCC=$(PATSHOME)/bin/patscc
 ATSOPT=$(PATSHOME)/bin/patsopt
 
-ATSFLAGS+=
+ATSFLAGS+=$(ATSINCLUDE)
 
 CFLAGS+=-DATS_MEMALLOC_LIBC -D_DEFAULT_SOURCE -I $(PATSHOME)/ccomp/runtime -I $(PATSHOME) -O2 -I src
 LDFLAGS+=-L $(PATSHOME)/ccomp/atslib/lib
-LIBS+=
+LIBS+=-lpthread
 
 NAME := tests
 SRCDIR  := 
@@ -13,7 +13,7 @@ vpath %.dats src
 vpath %.dats src/DATS
 vpath %.sats src/SATS
 SRCS    := $(shell find $(SRCDIR) -name '*.dats' -type f -exec basename {} \;)
-DDIR    :=  build
+DDIR    := .build
 OBJ    := $(patsubst %.dats,$(DDIR)/%.o,$(SRCS))
 
 .PHONY: all clean fclean re 

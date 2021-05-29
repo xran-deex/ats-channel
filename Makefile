@@ -1,13 +1,13 @@
 ATSCC=$(PATSHOME)/bin/patscc
 ATSOPT=$(PATSHOME)/bin/patsopt
 
-ATSFLAGS+=-IATS src
+ATSFLAGS+=
 
 CFLAGS+=-DATS_MEMALLOC_LIBC -D_DEFAULT_SOURCE -I $(PATSHOME)/ccomp/runtime -I $(PATSHOME) -O2 -I src
-LDFLAGS+=-L $(PATSHOME)/ccomp/atslib/lib
-LIBS+=-latslib
+LDFLAGS+=
+LIBS+=-lpthread
 
-NAME := libats-shared-vt
+NAME := libats-channel
 SNAME   :=  $(NAME).a
 DNAME   :=  $(NAME).so
 SRCDIR  := src
